@@ -20,8 +20,9 @@ osxApp('Safari', function (err, res) {
 	/*
 	{
 		path: '/Applications/Safari.app',
-		version: '8.0.6',
-		bundle: 'com.apple.Safari'
+		bundle: 'com.apple.Safari',
+		size: '34058118',
+		version: '8.0.6'
 	}
 	*/
 });

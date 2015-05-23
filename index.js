@@ -4,6 +4,7 @@ var eachAsync = require('each-async');
 var appPath = require('app-path');
 var bundleId = require('bundle-id');
 var osxAppVersion = require('osx-app-version');
+var appSize = require('app-size');
 
 module.exports = function (app, cb) {
 	if (process.platform !== 'darwin') {
@@ -16,7 +17,7 @@ module.exports = function (app, cb) {
 
 	var obj = {};
 
-	eachAsync([osxAppVersion, bundleId, appPath], function (fn, index, done) {
+	eachAsync([osxAppVersion, bundleId, appPath, appSize], function (fn, index, done) {
 		fn(app, function(err, res) {
 			if (err) {
 				done(err);
@@ -26,8 +27,10 @@ module.exports = function (app, cb) {
 				obj.version = res;
 			} else if (index === 1) {
 				obj.bundle = res;
-			} else {
+			} else if (index === 2) {
 				obj.path = res;
+			} else {
+				obj.size = res;
 			}
 
 			done();

@@ -3,7 +3,7 @@ var test = require('ava');
 var osxApp = require('./');
 
 test('Safari', function (t) {
-	t.plan(5);
+	t.plan(6);
 
 	osxApp('Safari', function (err, res) {
 		t.assert(!err, err);
@@ -11,5 +11,6 @@ test('Safari', function (t) {
 		t.assert(res.path);
 		t.assert(res.version);
 		t.assert(res.bundle);
+		t.assert(res.size);
 	});
 });
