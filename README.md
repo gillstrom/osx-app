@@ -21,7 +21,7 @@ osxApp('Safari', function (err, res) {
 	{
 		path: '/Applications/Safari.app',
 		bundle: 'com.apple.Safari',
-		size: '34058118',
+		size: 34058118,
 		version: '8.0.6'
 	}
 	*/
