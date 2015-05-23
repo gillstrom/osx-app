@@ -1,8 +1,9 @@
 'use strict';
 var execFile = require('child_process').execFile;
+var eachAsync = require('each-async');
 var appPath = require('app-path');
+var bundleId = require('bundle-id');
 var osxAppVersion = require('osx-app-version');
-var osxBundle = require('osx-bundle');
 
 module.exports = function (app, cb) {
 	if (process.platform !== 'darwin') {
@@ -15,32 +16,28 @@ module.exports = function (app, cb) {
 
 	var obj = {};
 
-	appPath(app, function (err, path) {
+	eachAsync([osxAppVersion, bundleId, appPath], function (fn, index, done) {
+		fn(app, function(err, res) {
+			if (err) {
+				done(err);
+			}
+
+			if (index === 0) {
+				obj.version = res;
+			} else if (index === 1) {
+				obj.bundle = res;
+			} else {
+				obj.path = res;
+			}
+
+			done();
+		});
+	}, function (err) {
 		if (err) {
 			cb(err);
 			return;
 		}
 
-		obj.path = path;
-
-		osxAppVersion(path, function (err, version) {
-			if (err) {
-				cb(err);
-				return;
-			}
-
-			obj.version = version;
-
-			osxBundle(path, function (err, bundle) {
-				if (err) {
-					cb(err);
-					return;
-				}
-
-				obj.bundle = bundle;
-
-				cb(null, obj);
-			});
-		});
+		cb(null, obj);
 	});
 };

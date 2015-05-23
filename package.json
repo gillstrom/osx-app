@@ -25,9 +25,10 @@
   "license": "MIT",
   "dependencies": {
     "app-path": "^1.0.2",
+    "bundle-id": "^1.0.2",
+    "each-async": "^1.1.1",
     "meow": "^3.1.0",
-    "osx-app-version": "^1.0.5",
-    "osx-bundle": "^1.0.0"
+    "osx-app-version": "^1.0.5"
   },
   "devDependencies": {
     "ava": "0.0.4"
