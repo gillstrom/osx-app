@@ -17,7 +17,13 @@ var osxApp = require('osx-app');
 
 osxApp('Safari', function (err, res) {
 	console.log(res);
-	//=> {path: '/Applications/Safari.app', version: '8.0.6', bundle: 'com.apple.Safari'}
+	/*
+	{
+		path: '/Applications/Safari.app',
+		version: '8.0.6',
+		bundle: 'com.apple.Safari'
+	}
+	*/
 });
 ```
 
