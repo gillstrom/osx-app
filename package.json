@@ -1,0 +1,35 @@
+{
+  "name": "osx-app",
+  "version": "1.0.0",
+  "description": "Get information about an app (OS X)",
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "bin": "cli.js",
+  "repository": "gillstrom/osx-app",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "app",
+    "bundle",
+    "cli",
+    "cli-app",
+    "information",
+    "osx",
+    "path",
+    "version"
+  ],
+  "author": "Andreas Gillström <andreasgillstrom@gmail.com> (http://hynden.se)",
+  "license": "MIT",
+  "dependencies": {
+    "app-path": "^1.0.2",
+    "meow": "^3.1.0",
+    "osx-app-version": "^1.0.5",
+    "osx-bundle": "^1.0.0"
+  },
+  "devDependencies": {
+    "ava": "0.0.4"
+  }
+}
