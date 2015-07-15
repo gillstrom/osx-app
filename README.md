@@ -1,6 +1,6 @@
 # osx-app [![Build Status](https://travis-ci.org/gillstrom/osx-app.svg?branch=master)](https://travis-ci.org/gillstrom/osx-app)
 
-> Get information about an app (OS X)
+> Get information about an app in OS X systems.
 
 
 ## Install
