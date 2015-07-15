@@ -5,8 +5,8 @@
   "license": "MIT",
   "repository": "gillstrom/osx-app",
   "author": {
-    "name": "Andreas Gillström",
     "email": "andreasgillstrom@gmail.com",
+    "name": "Andreas Gillström",
     "url": "github.com/gillstrom"
   },
   "bin": "cli.js",
@@ -17,8 +17,8 @@
     "test": "node test.js"
   },
   "files": [
-    "index.js",
-    "cli.js"
+    "cli.js",
+    "index.js"
   ],
   "keywords": [
     "app",
@@ -36,6 +36,8 @@
     "app-path": "^1.0.2",
     "app-size": "^1.1.0",
     "bundle-id": "^1.0.2",
+    "capitalize": "^1.0.0",
+    "chalk": "^1.1.0",
     "each-async": "^1.1.1",
     "meow": "^3.1.0",
     "osx-app-version": "^1.0.5"

@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 'use strict';
+var capitalize = require('capitalize');
+var chalk = require('chalk');
 var meow = require('meow');
 var osxApp = require('./');
 
@@ -21,5 +23,7 @@ osxApp(cli.input[0], function (err, res) {
 		process.exit(1);
 	}
 
-	console.log(res);
+	Object.keys(res).forEach(function (el) {
+		console.log('  ' + chalk.bold(capitalize(el)) + '  \t' + res[el]);
+	});
 });
