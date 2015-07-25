@@ -9,7 +9,7 @@ var cli = meow({
 	help: [
 		'Examples',
 		'  $ osx-app Safari'
-	].join('\n')
+	]
 });
 
 if (!cli.input.length) {
