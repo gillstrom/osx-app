@@ -3,6 +3,7 @@
 var capitalize = require('capitalize');
 var chalk = require('chalk');
 var meow = require('meow');
+var prettyBytes = require('pretty-bytes');
 var osxApp = require('./');
 
 var cli = meow({
@@ -22,6 +23,8 @@ osxApp(cli.input[0], function (err, res) {
 		console.error(err.message);
 		process.exit(1);
 	}
+
+	res.size = prettyBytes(res.size);
 
 	Object.keys(res).forEach(function (el) {
 		console.log('  ' + chalk.bold(capitalize(el)) + '  \t' + res[el]);
