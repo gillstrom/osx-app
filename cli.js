@@ -1,32 +1,22 @@
 #!/usr/bin/env node
 'use strict';
-var capitalize = require('capitalize');
-var chalk = require('chalk');
-var meow = require('meow');
-var prettyBytes = require('pretty-bytes');
-var osxApp = require('./');
+const capitalize = require('capitalize');
+const chalk = require('chalk');
+const meow = require('meow');
+const prettyBytes = require('pretty-bytes');
+const osxApp = require('./');
 
-var cli = meow({
-	help: [
-		'Examples',
-		'  $ osx-app Safari'
-	]
-});
+const cli = meow(`
+	Examples
+	  $ osx-app Safari
+`);
 
-if (!cli.input.length) {
+if (cli.input.length === 0) {
 	console.error('Application is required');
 	process.exit(1);
 }
 
-osxApp(cli.input[0], function (err, res) {
-	if (err) {
-		console.error(err.message);
-		process.exit(1);
-	}
-
+osxApp(cli.input[0]).then(res => {
 	res.size = prettyBytes(res.size);
-
-	Object.keys(res).forEach(function (el) {
-		console.log('  ' + chalk.bold(capitalize(el)) + '  \t' + res[el]);
-	});
+	Object.keys(res).forEach(x => console.log(`  ${chalk.bold(capitalize(x))}  \t${res[x]}`));
 });

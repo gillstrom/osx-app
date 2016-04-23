@@ -11,7 +11,7 @@
   },
   "bin": "cli.js",
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=4"
   },
   "scripts": {
     "test": "node test.js"
@@ -33,14 +33,13 @@
     "version"
   ],
   "dependencies": {
-    "app-path": "^1.0.2",
-    "app-size": "^1.1.0",
-    "bundle-id": "^1.0.2",
+    "app-path": "^2.1.0",
+    "app-size": "^2.0.0",
+    "bundle-id": "^2.0.0",
     "capitalize": "^1.0.0",
     "chalk": "^1.1.0",
-    "each-async": "^1.1.1",
     "meow": "^3.3.0",
-    "osx-app-version": "^1.0.5",
+    "osx-app-version": "^2.0.2",
     "pretty-bytes": "^3.0.1"
   },
   "devDependencies": {

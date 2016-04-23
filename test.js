@@ -3,10 +3,9 @@ var test = require('ava');
 var osxApp = require('./');
 
 test('Safari', function (t) {
-	t.plan(6);
+	t.plan(5);
 
-	osxApp('Safari', function (err, res) {
-		t.assert(!err, err);
+	osxApp('Safari').then(function (res) {
 		t.assert(typeof res === 'object');
 		t.assert(res.path);
 		t.assert(res.version);
