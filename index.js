@@ -5,6 +5,7 @@ var appPath = require('app-path');
 var bundleId = require('bundle-id');
 var osxAppVersion = require('osx-app-version');
 var appSize = require('app-size');
+var prettyBytes = require('pretty-bytes');
 
 module.exports = function (app, cb) {
 	if (process.platform !== 'darwin') {
@@ -30,7 +31,7 @@ module.exports = function (app, cb) {
 			} else if (index === 2) {
 				obj.path = res;
 			} else {
-				obj.size = res;
+				obj.size = prettyBytes(res);
 			}
 
 			done();
