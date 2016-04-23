@@ -13,9 +13,9 @@ $ npm install --save osx-app
 ## Usage
 
 ```js
-var osxApp = require('osx-app');
+const osxApp = require('osx-app');
 
-osxApp('Safari', function (err, res) {
+osxApp('Safari', (err, res) => {
 	console.log(res);
 	/*
 	{
