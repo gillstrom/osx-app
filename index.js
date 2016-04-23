@@ -6,7 +6,7 @@ const appSize = require('app-size');
 
 module.exports = app => {
 	if (process.platform !== 'darwin') {
-		return Promise.reject(new Error('Only OS X systems are supported'));
+		return Promise.reject(new Error('Only OS X is supported'));
 	}
 
 	if (typeof app !== 'string') {

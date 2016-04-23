@@ -7,7 +7,7 @@ const prettyBytes = require('pretty-bytes');
 const osxApp = require('./');
 
 const cli = meow(`
-	Examples
+	Example
 	  $ osx-app Safari
 `);
 

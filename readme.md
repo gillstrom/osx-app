@@ -38,7 +38,7 @@ $ npm install --global osx-app
 ```
 $ osx-app --help
 
-  Examples
+  Example
     $ osx-app Safari
 ```
 
