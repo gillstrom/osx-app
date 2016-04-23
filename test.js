@@ -1,15 +1,10 @@
-'use strict';
-var test = require('ava');
-var osxApp = require('./');
+import test from 'ava';
+import m from './';
 
-test('Safari', function (t) {
-	t.plan(5);
-
-	osxApp('Safari').then(function (res) {
-		t.assert(typeof res === 'object');
-		t.assert(res.path);
-		t.assert(res.version);
-		t.assert(res.bundle);
-		t.assert(res.size);
-	});
+test(async t => {
+	const res = await m('Safari');
+	t.truthy(res.version);
+	t.regex(res.path, /Safari.app$/);
+	t.regex(res.size, /\d*/);
+	t.is(res.bundle, 'com.apple.Safari');
 });
