@@ -15,9 +15,9 @@ module.exports = app => {
 
 	return Promise.all([osxAppVersion(app), bundleId(app), appPath(app), appSize(app)]).then(res => {
 		return {
+			path: res[2],
 			version: res[0],
 			bundle: res[1],
-			path: res[2],
 			size: res[3]
 		};
 	});
